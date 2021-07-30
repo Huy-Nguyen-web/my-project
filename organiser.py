@@ -33,36 +33,36 @@ def destination(path,local):
 
 
 #Condition of the file: if file end with sth -> Move to that specific place
+if __name__ == "__main__":
+    for files in source:
 
-for files in source:
-    
-    #Sort the Document Folder------------------------------------
-    if files.endswith(".docx") or files.endswith(".doc"):
-        shutil.move(files,destination("Document","Word"))
-    if files.endswith(".xlsx") or files.endswith(".cvs"):
-        shutil.move(files,destination("Document","Excel"))
-    if files.endswith(".ppt") or files.endswith(".pptx"):
-        shutil.move(files,destination("Document","PowerPoint"))
-    if files.endswith(".pdf") or files.endswith(".PDF"):
-        shutil.move(files,destination("Document", "Pdf"))
-    if files.endswith(".txt"):
-        shutil.move(files,destination("Document","Text"))
+        #Sort the Document Folder------------------------------------
+        if files.endswith(".docx") or files.endswith(".doc"):
+            shutil.move(files,destination("Document","Word"))
+        if files.endswith(".xlsx") or files.endswith(".cvs"):
+            shutil.move(files,destination("Document","Excel"))
+        if files.endswith(".ppt") or files.endswith(".pptx"):
+            shutil.move(files,destination("Document","PowerPoint"))
+        if files.endswith(".pdf") or files.endswith(".PDF"):
+            shutil.move(files,destination("Document", "Pdf"))
+        if files.endswith(".txt"):
+            shutil.move(files,destination("Document","Text"))
 
-    #Sort the Media Folder----------------------------------------
-    if files.endswith(".png") or files.endswith(".JPG") or files.endswith(".jpeg") or files.endswith(".jpg") or files.endswith(".gif") or files.endswith(".ico"):
-        shutil.move(files,destination("Media","Image"))
-    if files.endswith(".mov") or files.endswith(".mp4") or files.endswith(".m4p") or files.endswith(".svi") or files.endswith(".m4v") or files.endswith(".amv"):
-        shutil.move(files,destination("Media", "Video"))
-    if files.endswith(".mp3") or files.endswith(".msv") or files.endswith(".wav") or files.endswith(".wv"):
-        shutil.move(files, destination("Media", "Music"))  
-                      
-    #Sort the Compress File---------------------------------------
-    if files.endswith(".zip") or files.endswith(".rar"):
-        shutil.move(files,destination("Zip",''))
-        
-    #Sort the App Folder------------------------------------------
-    if files.endswith(".exe") or files.endswith(".lnk"):
-        if not files.endswith("Peep.exe"):
-            shutil.move(files,destination("App",''))
+        #Sort the Media Folder----------------------------------------
+        if files.endswith(".png") or files.endswith(".JPG") or files.endswith(".jpeg") or files.endswith(".jpg") or files.endswith(".gif") or files.endswith(".ico"):
+            shutil.move(files,destination("Media","Image"))
+        if files.endswith(".mov") or files.endswith(".mp4") or files.endswith(".m4p") or files.endswith(".svi") or files.endswith(".m4v") or files.endswith(".amv"):
+            shutil.move(files,destination("Media", "Video"))
+        if files.endswith(".mp3") or files.endswith(".msv") or files.endswith(".wav") or files.endswith(".wv"):
+            shutil.move(files, destination("Media", "Music"))  
+
+        #Sort the Compress File---------------------------------------
+        if files.endswith(".zip") or files.endswith(".rar"):
+            shutil.move(files,destination("Zip",''))
+
+        #Sort the App Folder------------------------------------------
+        if files.endswith(".exe") or files.endswith(".lnk"):
+            if not files.endswith("Peep.exe"): #This is because of the fact that I have changed my program name to Peep, and I don't want the program just move automatically into App Folder
+                shutil.move(files,destination("App",''))
 
 
